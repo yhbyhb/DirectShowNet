@@ -8,7 +8,7 @@
         <projectUrl>https://directshownet.sourceforge.net/</projectUrl>
                 <title>DirectShow .Net</title>
         <readme>docs\README.md</readme>
-
+        <license type="expression">LGPL-2.1-only</license>
         <language>en-US</language>
         <dependencies>
             <group targetFramework="net2.0" />
@@ -19,6 +19,3 @@
         <file src="DirectShowLibV2-1\lib\DirectShowLib-2005.dll" target="lib\net20" />
     </files>
 </package>
-
-
-
