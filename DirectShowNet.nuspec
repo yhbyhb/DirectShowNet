@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+    <metadata>
+        <id>DirectShowNet</id>
+        <version>2.1.0</version>
+        <description>**Unofficial** .NET c# directshow lib, capture and playback using c# and directshow</description>
+        <authors>snarfle</authors>
+        <projectUrl>https://directshownet.sourceforge.net/</projectUrl>
+                <title>DirectShow .Net</title>
+        <readme>docs\README.md</readme>
+
+        <language>en-US</language>
+        <dependencies>
+            <group targetFramework="net2.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="README.md" target="docs\" />
+        <file src="DirectShowLibV2-1\lib\DirectShowLib-2005.dll" target="lib\net20" />
+    </files>
+</package>
+
+
+
