@@ -1,6 +1,9 @@
 name: Publish nuget packgae
 run-name: ${{ github.actor }} is publishing DirectShow .Net package to NuGet
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   Publish-NuGet-Package:
@@ -16,7 +19,7 @@ jobs:
         # NuGet version to install. Can be `latest`, `preview`, a concrete version like `5.3.1`, or a semver range specifier like `5.x`.
         nuget-version: 'latest' # optional, default is latest
         # NuGet API Key to configure.
-        # nuget-api-key: # optional
+        nuget-api-key: ${{ secrets.NUGET_APIKEY }}
         # Source to scope the NuGet API Key to.
         # nuget-api-key-source: # optional
     - run: nuget pack DirectShowNet.nuspec
@@ -27,7 +30,6 @@ jobs:
         if-no-files-found: error
     - name: Publish NuGet package
       run: |
-        nuget setApiKey "${{ secrets.NUGET_APIKEY }}"
         foreach($file in (Get-ChildItem "$ActivityLogDirectory" -Filter *.nupkg)) {
             nuget push $file -Source https://api.nuget.org/v3/index.json
             # WRITE-HOST $file
