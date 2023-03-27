@@ -19,3 +19,4 @@ jobs:
         # nuget-api-key: # optional
         # Source to scope the NuGet API Key to.
         # nuget-api-key-source: # optional
+    - run: nuget pack DirectShowNet.nuspec
