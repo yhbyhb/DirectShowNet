@@ -1,4 +1,4 @@
-# EmguCV nuget package
+# directshow.net library
 Unofficial nuget package of [DirectShow .NET](https://directshownet.sourceforge.net/).
 
 ## Introduction
