@@ -25,3 +25,10 @@ jobs:
       with:
         path: DirectShowNet*.nupkg
         if-no-files-found: error
+    - name: Publish NuGet package
+      run: |
+        nuget setApiKey "${{ secrets.NUGET_APIKEY }}"
+        foreach($file in (Get-ChildItem "$ActivityLogDirectory" -Filter *.nupkg)) {
+            nuget push $file -Source https://api.nuget.org/v3/index.json
+            # WRITE-HOST $file
+        }
